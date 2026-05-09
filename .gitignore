@@ -1,0 +1,12 @@
+# Local config (contains real URLs and keywords — do not commit)
+config.json
+
+# Output files
+tmp/
+*.pdf
+*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo

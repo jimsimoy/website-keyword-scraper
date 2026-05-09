@@ -1,0 +1,10 @@
+{
+  "keywords": [
+    "keyword-one",
+    "keyword-two"
+  ],
+  "urls": [
+    "https://example.com/page-1/",
+    "https://example.com/page-2/"
+  ]
+}
