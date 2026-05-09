@@ -1,3 +1,6 @@
+# Virtual environment
+venv/
+
 # Local config (contains real URLs and keywords — do not commit)
 config.json
 

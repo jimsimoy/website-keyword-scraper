@@ -9,17 +9,49 @@ Scrapes a list of URLs and counts occurrences of specified keywords in the visib
 
 ## Requirements
 
-Python 3.10+ with the following packages:
+Python 3.10+
+
+---
+
+## Setup
+
+A virtual environment is already created at `venv/`. To activate it:
 
 ```bash
-pip3 install requests beautifulsoup4 lxml reportlab
+cd /var/www/wiredmedia/agents/dev-tools/keyword-scraper
+
+source venv/bin/activate        # macOS / Linux
+venv\Scripts\activate           # Windows
 ```
+
+Once activated, run the tool normally:
+
+```bash
+python3 scrape.py
+```
+
+Deactivate when done:
+
+```bash
+deactivate
+```
+
+### First-time setup on a new machine
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+> `venv/` is git-ignored and should not be committed.
 
 ---
 
 ## Configuration
 
-Copy the template and fill in your URLs and keywords:
+`config.json` holds the URLs and keywords. It is git-ignored so it stays local.  
+Copy the template to get started:
 
 ```bash
 cp config.example.json config.json
@@ -37,8 +69,6 @@ cp config.example.json config.json
 }
 ```
 
-> `config.json` is git-ignored. Commit `config.example.json` instead.
-
 ---
 
 ## Usage
@@ -52,7 +82,7 @@ python3 scrape.py
 ### Explicit config file
 
 ```bash
-python3 scrape.py --config config.json
+python3 scrape.py --config path/to/config.json
 ```
 
 ### Inline URLs and keywords
@@ -112,7 +142,9 @@ keyword-scraper/
 ├── scrape.py            # Main script
 ├── config.json          # Your local config (git-ignored)
 ├── config.example.json  # Committed template
+├── requirements.txt     # Python dependencies
 ├── .gitignore
 ├── README.md
+├── venv/                # Virtual environment (git-ignored)
 └── tmp/                 # Output files (git-ignored)
 ```
